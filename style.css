@@ -1,98 +1,159 @@
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --primary: #00bcd4;
+    --card: #f1f1f1;
+}
+
+body.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: #1e293b;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s ease;
 }
 
-/* Navbar */
-nav {
-    background: #222;
-    color: #fff;
-    padding: 15px 30px;
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 1000;
+}
+
+/* Header */
+header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 999;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
+nav a {
     margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
     text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
 }
 
-nav ul li a:hover {
-    color: #00bcd4;
+nav a:hover {
+    color: var(--primary);
 }
 
-/* Home */
-.home {
-    height: 90vh;
+/* Hero */
+.hero {
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #00bcd4;
-    color: white;
     text-align: center;
 }
 
-.home span {
-    color: #222;
+.hero span {
+    color: var(--primary);
 }
 
-.home button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #222;
+.buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: var(--primary);
     color: white;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 5px;
+    transition: 0.3s;
 }
 
-.home button:hover {
-    background: white;
-    color: #222;
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.socials {
+    margin-top: 25px;
+}
+
+.socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text);
 }
 
 /* Sections */
-section {
-    padding: 60px 20px;
+.section {
+    padding: 80px 20px;
     text-align: center;
 }
 
-.skills-list {
-    list-style: none;
+/* Skills */
+.skills {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.skills-list li {
-    background: #222;
-    color: white;
+.skill {
+    background: var(--card);
     margin: 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+    background: var(--primary);
+    color: white;
 }
 
 /* Footer */
 footer {
-    background: #222;
-    color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
