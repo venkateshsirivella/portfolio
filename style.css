@@ -1,179 +1,205 @@
 :root {
-    --bg1: #0f2027;
-    --bg2: #203a43;
-    --bg3: #2c5364;
-    --text: #ffffff;
-    --card: rgba(255,255,255,0.12);
-    --accent: #00e5ff;
+    --bg1:#0f2027;
+    --bg2:#203a43;
+    --bg3:#2c5364;
+    --text:#ffffff;
+    --card:rgba(255,255,255,0.12);
+    --accent:#00e5ff;
 }
 
 body.light {
-    --bg1: #1d2671;
-    --bg2: #c33764;
-    --bg3: #1d2671;
-    --text: #ffffff;
-    --card: rgba(255,255,255,0.18);
+    --bg1:#1d2671;
+    --bg2:#c33764;
+    --bg3:#1d2671;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-    color: var(--text);
-    min-height: 100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+    color:var(--text);
 }
 
-/* Theme Button */
+/* Theme */
 .theme-btn {
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    background: var(--card);
-    border: none;
-    font-size: 22px;
-    padding: 10px 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    z-index: 999;
+    position:fixed;
+    top:18px;
+    right:20px;
+    font-size:22px;
+    background:var(--card);
+    border:none;
+    padding:10px;
+    border-radius:50%;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    z-index:999;
 }
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
 }
 
 nav a {
-    margin-left: 20px;
-    color: var(--text);
-    text-decoration: none;
-    font-weight: 500;
+    color:var(--text);
+    text-decoration:none;
+    margin-left:18px;
 }
 
-nav a:hover {
-    color: var(--accent);
-}
+nav a:hover { color:var(--accent); }
 
 /* Hero */
 .hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    animation: fadeIn 0.8s ease;
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    animation:fadeIn 0.8s ease;
 }
 
-.hero span {
-    color: var(--accent);
+.hero span { color:var(--accent); }
+
+.typing {
+    margin-top:10px;
+    color:var(--accent);
+    min-height:26px;
 }
 
-.actions {
-    margin-top: 30px;
-}
+/* Buttons */
+.actions { margin-top:30px; }
 
 .btn {
-    padding: 12px 28px;
-    background: var(--accent);
-    color: black;
-    border-radius: 30px;
-    text-decoration: none;
-    margin: 8px;
-    font-weight: 600;
-    transition: 0.3s;
+    padding:12px 28px;
+    background:var(--accent);
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+    margin:6px;
+    font-weight:600;
+    transition:0.3s;
 }
 
 .btn.outline {
-    background: transparent;
-    border: 2px solid var(--accent);
-    color: var(--accent);
+    background:transparent;
+    border:2px solid var(--accent);
+    color:var(--accent);
 }
 
-.btn:hover {
-    transform: translateY(-5px);
-}
+.btn:hover { transform:translateY(-5px); }
 
 /* Social */
-.socials {
-    margin-top: 30px;
-}
-
+.socials { margin-top:30px; }
 .socials a {
-    margin: 0 12px;
-    color: var(--text);
-    text-decoration: none;
+    margin:0 12px;
+    color:var(--text);
+    text-decoration:none;
 }
 
-/* Glass Sections */
+/* Sections */
 section {
-    padding: 80px 20px;
-    text-align: center;
+    padding:90px 20px;
+    text-align:center;
 }
 
 .glass {
-    background: var(--card);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    margin: 40px auto;
-    max-width: 900px;
+    max-width:900px;
+    margin:40px auto;
+    background:var(--card);
+    backdrop-filter:blur(16px);
+    border-radius:25px;
+    padding:50px;
 }
 
 /* Skills */
-.skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.skills-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:20px;
+    max-width:900px;
+    margin:40px auto;
 }
 
-.skills span {
-    background: var(--card);
-    margin: 10px;
-    padding: 14px 26px;
-    border-radius: 30px;
-    transition: 0.25s;
+.skills-grid div {
+    background:var(--card);
+    padding:18px;
+    border-radius:18px;
+    transition:0.3s;
 }
 
-.skills span:hover {
-    background: var(--accent);
-    color: black;
-    transform: scale(1.1);
+.skills-grid div:hover {
+    background:var(--accent);
+    color:black;
+    transform:translateY(-6px) scale(1.05);
+}
+
+/* Timeline */
+.timeline {
+    max-width:900px;
+    margin:40px auto;
+}
+
+.timeline-item {
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    animation:fadeInUp 0.7s ease;
+}
+
+/* Projects */
+.projects-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:40px auto;
+}
+
+.project-card {
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.project-card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.project-card a {
+    color:var(--accent);
+    text-decoration:none;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 25px;
+    text-align:center;
+    padding:25px;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeInUp {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav a {
-        margin: 0 10px;
-    }
+@media(max-width:768px) {
+    header {flex-direction:column; gap:10px;}
 }
