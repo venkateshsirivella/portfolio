@@ -25,36 +25,48 @@ body {
     color:var(--text);
 }
 
-/* Theme */
+/* Theme Button */
 .theme-btn {
     position:fixed;
     top:18px;
     right:20px;
-    font-size:22px;
     background:var(--card);
     border:none;
     padding:10px;
+    font-size:22px;
     border-radius:50%;
     cursor:pointer;
     backdrop-filter:blur(10px);
-    z-index:999;
 }
 
 /* Header */
 header {
     display:flex;
     justify-content:space-between;
-    align-items:center;
     padding:20px 40px;
 }
 
 nav a {
+    margin-left:18px;
     color:var(--text);
     text-decoration:none;
-    margin-left:18px;
+    position:relative;
 }
 
-nav a:hover { color:var(--accent); }
+nav a::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
+    background:var(--accent);
+    transition:0.3s;
+}
+
+nav a:hover::after {
+    width:100%;
+}
 
 /* Hero */
 .hero {
@@ -72,21 +84,20 @@ nav a:hover { color:var(--accent); }
 .typing {
     margin-top:10px;
     color:var(--accent);
-    min-height:26px;
 }
 
 /* Buttons */
 .actions { margin-top:30px; }
 
 .btn {
-    padding:12px 28px;
-    background:var(--accent);
-    color:black;
+    padding:12px 30px;
     border-radius:30px;
     text-decoration:none;
-    margin:6px;
     font-weight:600;
-    transition:0.3s;
+    margin:6px;
+    transition:0.35s;
+    background:var(--accent);
+    color:black;
 }
 
 .btn.outline {
@@ -95,14 +106,24 @@ nav a:hover { color:var(--accent); }
     color:var(--accent);
 }
 
-.btn:hover { transform:translateY(-5px); }
+.btn:hover {
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 15px 30px rgba(0,0,0,0.35);
+}
 
-/* Social */
+/* Social Hover (Premium) */
 .socials { margin-top:30px; }
+
 .socials a {
     margin:0 12px;
     color:var(--text);
     text-decoration:none;
+    transition:0.3s;
+}
+
+.socials a:hover {
+    color:var(--accent);
+    letter-spacing:1px;
 }
 
 /* Sections */
@@ -113,79 +134,69 @@ section {
 
 .glass {
     max-width:900px;
-    margin:40px auto;
+    margin:auto;
+    padding:50px;
     background:var(--card);
     backdrop-filter:blur(16px);
     border-radius:25px;
-    padding:50px;
 }
 
 /* Skills */
-.skills-grid {
+.skills-cards {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:20px;
-    max-width:900px;
-    margin:40px auto;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:50px auto;
 }
 
-.skills-grid div {
-    background:var(--card);
-    padding:18px;
-    border-radius:18px;
-    transition:0.3s;
-}
-
-.skills-grid div:hover {
-    background:var(--accent);
-    color:black;
-    transform:translateY(-6px) scale(1.05);
-}
-
-/* Timeline */
-.timeline {
-    max-width:900px;
-    margin:40px auto;
-}
-
-.timeline-item {
+.skill-card {
     background:var(--card);
     padding:30px;
     border-radius:20px;
-    margin-bottom:25px;
-    animation:fadeInUp 0.7s ease;
+    transition:0.35s;
 }
 
-/* Projects */
-.projects-grid {
+.skill-card img {
+    width:60px;
+    margin-bottom:15px;
+}
+
+.skill-card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Education */
+.education-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
     max-width:1100px;
     margin:40px auto;
 }
 
-.project-card {
+.edu-card {
     background:var(--card);
-    padding:25px;
+    padding:35px;
     border-radius:20px;
     transition:0.3s;
 }
 
-.project-card:hover {
-    transform:translateY(-10px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.3);
-}
-
-.project-card a {
-    color:var(--accent);
-    text-decoration:none;
+.edu-card:hover {
+    transform:translateY(-8px);
 }
 
 /* Footer */
 footer {
     text-align:center;
-    padding:25px;
+    padding:35px;
+    background:rgba(0,0,0,0.3);
+}
+
+footer a {
+    color:var(--accent);
+    text-decoration:none;
 }
 
 /* Animations */
@@ -194,12 +205,10 @@ footer {
     to {opacity:1; transform:translateY(0);}
 }
 
-@keyframes fadeInUp {
-    from {opacity:0; transform:translateY(30px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
 /* Mobile */
 @media(max-width:768px) {
-    header {flex-direction:column; gap:10px;}
+    header {
+        flex-direction:column;
+        gap:10px;
+    }
 }
