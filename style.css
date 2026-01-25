@@ -123,6 +123,8 @@ nav a:hover::after {
 .btn:hover {
     transform: translateY(-6px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    color: black;
+    letter-spacing: 1px;
 }
 
 /* Social Hover (Premium) */
@@ -195,7 +197,7 @@ section {
 
 /* Education */
 #education{
-    padding-top: 20px;
+    padding-top: 10px;
 }
 .education-grid {
     display: grid;
