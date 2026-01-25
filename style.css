@@ -157,6 +157,14 @@ section {
     backdrop-filter: blur(16px);
     border-radius: 25px;
 }
+#about {
+    padding-top: 30px;
+}
+
+#about p{
+    padding-top: 25px;
+    text-align: start;
+}
 
 /* Skills */
 .skills-cards {
@@ -186,6 +194,9 @@ section {
 }
 
 /* Education */
+#education{
+    padding-top: 20px;
+}
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
