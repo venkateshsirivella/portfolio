@@ -148,6 +148,7 @@ section {
     text-align: center;
 }
 
+
 .glass {
     max-width: 900px;
     margin: auto;
@@ -162,23 +163,24 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 25px;
-    /* max-width: 1100px; */
     margin-top: 50px ;
 }
 
-.skill-card {
+.cards {
     background: var(--card);
     padding: 15px;
     border-radius: 20px;
     transition: 0.35s;
 }
 
-.skill-card img {
+.cards img {
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 3px;
+
 }
 
-.skill-card:hover {
+.cards:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
@@ -189,7 +191,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     max-width: 1100px;
-    margin: 40px auto;
+    margin-top: 40px;
 }
 
 .edu-card {
